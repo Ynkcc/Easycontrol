@@ -26,13 +26,10 @@ jobs:
       working-directory: easycontrol
       run: ./gradlew build
     - name: Package Files
-      run: |
-        # Create a zip archive with all files in the specified directory
-        cd /home/runner/work/Easycontrol/Easycontrol/easycontrol/app/
-        zip -r my-package.zip .
+      run: pwd
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
         name: my-package
-        path: my-package.zip
+        path: /home/runner/work/Easycontrol/Easycontrol/easycontrol/app/src/main/res/raw/
